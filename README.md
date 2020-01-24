@@ -2,17 +2,16 @@
 
 ## Install and Setup
 
-Для запуска системы необходим кластер `kubernetes`. Как развернуть кластер локально, можно прочитать на [официальном сайте](https://kubernetes.io/docs/tasks/tools/install-minikube/).
+To start the system, you need a `kubernetes` cluster. How to deploy a cluster locally can be found on the [official website](https://kubernetes.io/docs/tasks/tools/install-minikube/).
 
-После того, как вы развернули кластер и подключились к нему (для доступа через `kubectl`), вам нужно выполнить 3 команды:
+After you deployed the cluster and connected to it (for access via kubectl), you need to execute 3 commands:
 
 ```
 kubectl create -f mapreduce-reduce.yaml
 kubectl create -f mapreduce-map.yaml
 kubectl create -f mapreduce-master.yaml
 ```
-
-Подождав немного времени, пока система развернется, можно начать эксперементировать:
+After waiting a little while for the system to turn around, you can start experimenting:
 
 ```
 kubectl proxy --port=8080 &
